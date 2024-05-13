@@ -25,7 +25,9 @@
     </section>
 
     <dialog class="exceeds-limit">
-      Limit na nimo bai
+      Limit na nimo bai, sunod na pud
+      <button class="button --tertiary-btn"></button>
+      <button class="button --primary-btn"></button>
     </dialog>
   </main>
 </body>
