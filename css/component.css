@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+@font-face {
+  font-family: "Dinfest1";
+  src: url("../assets/fonts/dinfest.otf") format("opentype");
+}
+
+:root {
+  --primary-color: #fcbb50;
+  --secondary-color: #90c09e;
+  --accent-color: #f75b5b;
+  --text-color: #232b2e;
+  --border-color: var(--text-color);
+  --box-shadow-color: #29383b;
+
+  --main-bg-color: #ebdfaf;
+  --pri-bg-color: rgba(252, 187, 80, 15%);
+  --sec-bg-color: rgba(144, 192, 158, 15%);
+  --acc-bg-color: rgba(247, 91, 91, 15%);
+
+  --hover-primary-color: #d69d42;
+  --hover-secondary-color: #6d9e7c;
+  --hover-tertiary-color: rgba(219, 162, 69, 0.2);
+  --hover-accent-color: #cb4a4a;
+  --hover-text-color: #141d1e;
+
+  --display-font: "Dinfest1";
+  --body-text-font: "Rubik";
+
+  --display-size: 11rem;
+  --h1-size: 4rem;
+  --h2-size: 2rem;
+  --h3-size: 1.25rem;
+  --body-text-size: 1rem;
+
+  /* for margins and paddings */
+  --section-spacing: 8em;
+  --xl-spacing: 6em;
+  --large-spacing: 4em;
+  --semi-large-spacing: 3em;
+  --medium-spacing: 2em;
+  --small-spacing: 1em;
+
+  --body-text-line-height: 1.5em;
+
+  --button-hover-animation: cubic-bezier(0.4, 0.575, 0.5, 0.8) 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--text-color);
+  font-family: var(--body-text-font);
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+dialog {
+  margin: auto;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+.button {
+  border: 2px solid var(--border-color);
+  border-radius: 1em;
+  box-shadow: 0.25em 0.25em 0 var(--box-shadow-color);
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: 500;
+  padding: var(--small-spacing) var(--medium-spacing);
+  text-align: center;
+  text-decoration: none;
+  transition: var(--button-hover-animation);
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.--primary-btn {
+  background-color: var(--accent-color);
+}
+.--primary-btn:hover {
+  background-color: var(--hover-accent-color);
+  color: var(--hover-text-color);
+}
+
+.--secondary-btn {
+  background-color: var(--secondary-color);
+}
+
+.--secondary-btn:hover {
+  background-color: var(--hover-secondary-color);
+  color: var(--hover-text-color);
+}
+
+.--tertiary-btn {
+  border: 2px solid var(--border-color);
+  box-shadow: 0.25em 0.25em 0 var(--box-shadow-color);
+  background-color: transparent;
+}
+
+.--tertiary-btn:hover {
+  background-color: var(--hover-tertiary-color);
+  color: var(--hover-text-color);
+}
+
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0.5em;
+}
+header img {
+  width: 4rem;
+}
+
+.navbar {
+  background-color: var(--pri-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 0.8em;
+  box-shadow: 0.25em 0.25em 0 var(--box-shadow-color);
+  font-weight: 500;
+  margin-top: var(--small-spacing);
+  padding: var(--small-spacing) 0;
+}
+.navbar__list .navbar__link.active {
+  background-color: var(--hover-tertiary-color);
+  color: var(--hover-text-color);
+  border-radius: 0.75em;
+}
+.navbar__list {
+  display: flex;
+  list-style: none;
+}
+.navbar__list li {
+  border-right: 1px solid var(--border-color);
+}
+.navbar__list li:last-child {
+  border-right: none;
+}
+.navbar__link {
+  padding: var(--small-spacing) var(--xl-spacing);
+  text-decoration: none;
+  transition: var(--button-hover-animation);
+}
+.navbar__link:hover,
+.navbar__link:focus {
+  background-color: var(--hover-tertiary-color);
+  color: var(--hover-text-color);
+  border-radius: 0.75em;
+}
