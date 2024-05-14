@@ -12,27 +12,31 @@
 <body>
   <main class="create-cards-main">
     <section class="create-cards__wrapper" id="create-cards__wrapper">
+      <div class="create-cards__header">
+        <a href="" class="back">Back</a>
+        <h1>Create demo cards</h1>
+      </div>
       <div class="cards__wrapper" id="cards__wrapper">
         <!-- Cards will be added here using js -->
       </div>
 
       <div class="card_btn-wrapper" id="card_btn-wrapper">
-        <button type="button" class="card__add-btn button --tertiary-btn" id="add-btn">Add card</button>
+        <button type="button" class="card__add-btn button --secondary-btn" id="add-btn">Add card</button>
         <button type="button" class="card__finish-btn button --primary-btn" id="finish-btn">Finish</button>
       </div>
 
       </div>
     </section>
 
-    <dialog class="exceeds-limit">
-      Limit na nimo bai, sunod na pud
-      <button class="button --tertiary-btn"></button>
-      <button class="button --primary-btn"></button>
+    <dialog class="exceeds-limit" id="modal">
+      <h3>Oops! You don't have enough card left.</h3>
+      <button class="button --primary-btn">Ok</button>
     </dialog>
   </main>
 </body>
 
 <script src="add_card.js"></script>
 <script src="finish_card.js"></script>
+<script src="js/modal.js"></script>
 
 </html>

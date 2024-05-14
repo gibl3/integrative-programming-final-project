@@ -47,7 +47,7 @@ function createCard(cardContainer) {
   </div>
         `;
   cardContainer.appendChild(card);
-
+  
   // Event delegation for question and answer buttons
   card.addEventListener("click", function (event) {
     if (event.target.matches("#question-btn")) {

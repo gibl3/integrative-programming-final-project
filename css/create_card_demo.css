@@ -58,6 +58,10 @@
   /* background-color: #6d9e7c; */
 }
 
+.create-cards__header {
+  
+}
+
 .cards__wrapper {
   scroll-behavior: smooth;
   overflow: auto;
@@ -182,7 +186,7 @@ textarea:focus {
 
 .card__add-btn {
   /* width: 60%; */
-  padding-inline: 12em;
+  padding-inline: 11em;
   margin-right: var(--small-spacing);
   text-align: center;
 }
