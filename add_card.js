@@ -1,18 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const cardLimit = 10;
+  const cardLimit = 3;
   let cardCount = 0;
 
   const cardWrapper = document.querySelector("#cards__wrapper");
   const cardBtnWrapper = document.querySelector("#card_btn-wrapper");
   const exceedsLimitModal = document.querySelector(".exceeds-limit");
 
-  createCard(cardWrapper);
+  createCard(cardWrapper, false);
   cardCount++;
 
   cardBtnWrapper.addEventListener("click", (event) => {
     if (event.target.matches("#add-btn")) {
       if (cardCount < cardLimit) {
-        createCard(cardWrapper);
+        createCard(cardWrapper, true);
         cardCount++;
       } else {
         exceedsLimitModal.showModal();
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function createCard(cardContainer) {
+function createCard(cardContainer, scrollAfter = true) {
   const card = document.createElement("div");
   card.classList.add("card");
   card.innerHTML = `
@@ -47,7 +47,7 @@ function createCard(cardContainer) {
   </div>
         `;
   cardContainer.appendChild(card);
-  
+
   // Event delegation for question and answer buttons
   card.addEventListener("click", function (event) {
     if (event.target.matches("#question-btn")) {
@@ -59,7 +59,9 @@ function createCard(cardContainer) {
     }
   });
 
-  cardContainer.scrollTop = cardContainer.scrollHeight;
+  if (scrollAfter) {
+    cardContainer.scrollTop = cardContainer.scrollHeight;
+  }
 
   return card;
 }

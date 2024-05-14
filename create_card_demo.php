@@ -28,9 +28,9 @@
       </div>
     </section>
 
-    <dialog class="exceeds-limit" id="modal">
+    <dialog class="exceeds-limit" id="exceeds-limit-modal">
       <h3>Oops! You don't have enough card left.</h3>
-      <button class="button --primary-btn">Ok</button>
+      <button class="button --primary-btn" id="ok">Ok</button>
     </dialog>
   </main>
 </body>

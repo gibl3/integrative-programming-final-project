@@ -3,8 +3,6 @@ document
   .addEventListener("submit", function (event) {
     event.preventDefault();
 
-    console.log("yeah js");
-
     const formResponse = document.querySelector("#form-response");
     let formData = new FormData(this);
 

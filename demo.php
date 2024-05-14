@@ -33,7 +33,7 @@ include_once "includes/header.php";
 
 				<div class="form-response" id="form-response"></div>
 
-				<input type="submit" value="Create" class="create-btn button --secondary-btn">
+				<input type="submit" value="Create" class="create-btn button --secondary-btn" id="create-btn">
 			</form>
 		</div>
 	</dialog>

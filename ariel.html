@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+
+      main {
+        margin-inline: 7em;
+        background-color: aqua;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      .logo img {
+        margin-right: 1em;
+      }
+
+      .logo h1 {
+        font-size: 1.25em;
+      }
+
+      .nav-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .nav-bar a {
+        color: azure;
+        text-decoration: none;
+        margin-inline: 2em;
+      }
+
+      .nav-bar a:last-child {
+        margin-right: 0;
+      }
+
+      .hero {
+        background-color: darkslategray;
+        height: 80vh;
+        /* overflow: x; */
+        z-index: ;
+      }
+
+      .hero img {
+        width: 8em;
+        margin-left: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo">
+          <h1>Logo</h1>
+        </div>
+
+        <nav class="nav-bar">
+          <a href="">Home</a>
+          <a href="">Info</a>
+          <a href="">Service</a>
+          <a href="">Contact</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="hero-header">
+          <h1>Title</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
+            dignissimos inventore ullam!
+          </p>
+
+          <button type="button">Reserve now</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
