@@ -13,7 +13,7 @@
   <main class="create-cards-main">
     <section class="create-cards__wrapper" id="create-cards__wrapper">
       <div class="create-cards__header">
-        <a href="" class="back">Back</a>
+        <a href="demo.php" class="back">Back</a>
         <h1>Create demo cards</h1>
       </div>
       <div class="cards__wrapper" id="cards__wrapper">
@@ -28,9 +28,9 @@
       </div>
     </section>
 
-    <dialog class="exceeds-limit" id="exceeds-limit-modal">
+    <dialog class="exceeds-limit-modal" id="exceeds_limit_modal">
       <h3>Oops! You don't have enough card left.</h3>
-      <button class="button --primary-btn" id="ok">Ok</button>
+      <button class="button --primary-btn" id="close-btn" onclick="exceeds_limit_modal.close()">Ok</button>
     </dialog>
   </main>
 </body>

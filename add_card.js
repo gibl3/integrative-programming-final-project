@@ -1,19 +1,19 @@
+let cardCount = 1;
+
 document.addEventListener("DOMContentLoaded", function () {
   const cardLimit = 3;
-  let cardCount = 0;
 
   const cardWrapper = document.querySelector("#cards__wrapper");
   const cardBtnWrapper = document.querySelector("#card_btn-wrapper");
-  const exceedsLimitModal = document.querySelector(".exceeds-limit");
+  const exceedsLimitModal = document.querySelector("#exceeds_limit_modal");
 
   createCard(cardWrapper, false);
-  cardCount++;
 
   cardBtnWrapper.addEventListener("click", (event) => {
     if (event.target.matches("#add-btn")) {
       if (cardCount < cardLimit) {
-        createCard(cardWrapper, true);
         cardCount++;
+        createCard(cardWrapper, true);
       } else {
         exceedsLimitModal.showModal();
       }
@@ -55,7 +55,12 @@ function createCard(cardContainer, scrollAfter = true) {
     } else if (event.target.matches("#answer-btn")) {
       showTextarea(event, "answer");
     } else if (event.target.matches("#delete-card")) {
-      card.remove();
+      if (cardCount > 1) {
+        card.remove();
+        cardCount--;
+      } else {
+        alert("You must have at least one card.");
+      }
     }
   });
 

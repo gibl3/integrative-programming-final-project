@@ -53,9 +53,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 85vh;
+  height: 75vh;
+  /* max-height: min; */
   width: fit-content;
-  /* background-color: #6d9e7c; */
 }
 
 .create-cards__header {
