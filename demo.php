@@ -6,19 +6,6 @@ include_once "includes/header.php";
 	<section class="demo" id="demo">
 		<!-- controlled by a js function that checks if there is a study set to be fetched -->
 		<!-- if there is, then it will be displayed here -->
-		<!-- <div class="demo__wrapper">
-			<img src="https://via.placeholder.com/150" alt="" />
-			<h3>Lorem ipsum dolor sit amet consectetur.</h3>
-			<p>
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa,
-				commodi.
-			</p>
-
-			<button type="button" class="open-modal__btn button --primary-btn" id="open-modal" onclick="modal.showModal()">
-				Create study set
-			</button>
-		</div> -->
-
 	</section>
 
 	<dialog id="modal" class="modal">

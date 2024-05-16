@@ -1,8 +1,6 @@
 // use onclick to open and close the modal kay straightforward man
 // this file contains all the modal forms to be submitted
-document.addEventListener("DOMContentLoaded", function () {
-  modalFormSubmit();
-});
+document.addEventListener("DOMContentLoaded", modalFormSubmit);
 
 function modalFormSubmit() {
   const modal = document.querySelector("#modal");
