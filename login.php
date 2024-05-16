@@ -21,7 +21,7 @@
 				<input type="email" placeholder="Email" name="email" />
 				<div class="pass-input">
 					<input type="password" placeholder="Password" id="password" name="password" />
-					<img src="assets/images/eye-show-svgrepo-com.svg" alt="" id="pass-toggle" class="pass-toggle" />
+					<img src="assets/images/eye-show-svgrepo-com.svg" id="pass-toggle" class="pass-toggle" />
 				</div>
 				<a href="" class="forgot-password">Forgot password?</a>
 			</div>
@@ -36,7 +36,7 @@
 	</main>
 
 	<script src="js/pass_toggle.js"></script>
-	<script src="js/login_request.js"></script>
+	<script type="module" src="js/login_request.js"></script>
 </body>
 
 </html>

@@ -11,7 +11,7 @@
 
 <body>
   <main>
-    <form method="POST" id="form" redirect="index">
+    <form method="POST" id="form">
       <div class="form-heading">
         <h2>Sign up</h2>
         <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -43,7 +43,7 @@
   </main>
 
   <script src="js/pass_toggle.js"></script>
-  <script src="js/signup_request.js"></script>
+  <script type="module" src="js/signup_request.js"></script>
 </body>
 
 </html>

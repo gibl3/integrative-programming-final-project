@@ -33,6 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     user_login($conn, $form_data);
 } else {
-    header("location: ../login.php");
-    echo "yeah";
+    // header("location: ../login.php");
+    // echo "yeah";
+    // send_response("error", "Something went wrong");
+    header("location: 404.php");
 }

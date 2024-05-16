@@ -1,5 +1,5 @@
-const PasswordField = document.querySelector("#password");
-const PasswordToggle = document.querySelector("#pass-toggle");
+const passwordField = document.querySelector("#password");
+const passwordToggle = document.querySelector("#pass-toggle");
 
 const confPasswordField = document.querySelector("#conf-password");
 const confPasswordToggle = document.querySelector("#conf-pass-toggle");
@@ -14,10 +14,12 @@ function togglePasswordVisibility(inputField, toggleButton) {
   }
 }
 
-PasswordToggle.addEventListener("click", () => {
-  togglePasswordVisibility(PasswordField, PasswordToggle);
+passwordToggle.addEventListener("click", () => {
+  togglePasswordVisibility(passwordField, passwordToggle);
 });
 
-confPasswordToggle.addEventListener("click", () => {
-  togglePasswordVisibility(confPasswordField, confPasswordToggle);
-});
+if (confPasswordField && confPasswordToggle) {
+  confPasswordToggle.addEventListener("click", () => {
+    togglePasswordVisibility(confPasswordField, confPasswordToggle);
+  });
+}
