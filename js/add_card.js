@@ -15,6 +15,8 @@
 // if yes, show review modal
 // if review modal continue btn is clicked, submit form
 
+import { makeInsertionRequest } from "./insert_card_to_study_set.js";
+
 const cardLimit = 3;
 let cardCount = 1;
 
@@ -108,22 +110,45 @@ function finishCard() {
   if (!allFilled) {
     alert("Please fill in all the question fields.");
   } else {
-    const cardInfo = getQuestionAnswerPairs(cards);
+    showReviewModal(cards, reviewScrollable, reviewModal);
+  }
+}
 
-    cardInfo.forEach((pair) => {
-      const reviewCard = document.createElement("div");
-      reviewCard.classList.add("review-card");
-      reviewCard.innerHTML = `
+function showReviewModal(cards, reviewScrollable, reviewModal) {
+  const cardInfo = getQuestionAnswerPairs(cards);
+  const continueBtn = document.querySelector("#continue-btn");
+
+  cardInfo.forEach((pair) => {
+    const reviewCard = document.createElement("div");
+    reviewCard.classList.add("review-card");
+    reviewCard.innerHTML = `
         <div class="review-card-content">
           <p class="review-question">Question: ${pair.question}</p>
           <p class="review-answer">Answer: ${pair.answer}</p>
         </div>
       `;
-      reviewScrollable.appendChild(reviewCard);
-    });
+    reviewScrollable.appendChild(reviewCard);
 
-    reviewModal.showModal();
-  }
+    const formResponse = document.createElement("p");
+    formResponse.classList.add("form-response");
+    reviewScrollable.appendChild(formResponse);
+
+    continueBtn.addEventListener("click", () => {
+      const jsonData = JSON.stringify(cardInfo);
+
+      makeInsertionRequest(
+        "includes/demo_cards_process.php",
+        jsonData,
+        formResponse,
+        "demo.php"
+      );
+      // reviewModal.close();
+
+      redirectTo("demo.php", reviewModal, 1000);
+    });
+  });
+
+  reviewModal.showModal();
 }
 
 function getQuestionAnswerPairs(cards) {
@@ -143,4 +168,19 @@ function getQuestionAnswerPairs(cards) {
   });
 
   return pairs;
+}
+
+// window.addEventListener("beforeunload", function (e) {
+//   e.preventDefault();
+//   e.returnValue = "yeah bitch";
+// });
+
+function redirectTo(path, modal, time) {
+  setTimeout(() => {
+    window.location.href = path;
+
+    if (modal) {
+      modal.close();
+    }
+  }, time);
 }

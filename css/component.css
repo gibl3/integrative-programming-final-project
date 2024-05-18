@@ -96,13 +96,13 @@ body {
 }
 
 .--tertiary-btn {
-  border: 2px solid var(--border-color);
-  box-shadow: 0.25em 0.25em 0 var(--box-shadow-color);
-  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  background-color: var(--hover-tertiary-color);
 }
 
 .--tertiary-btn:hover {
-  background-color: var(--hover-tertiary-color);
+  background-color: var(--pri-bg-color);
   color: var(--hover-text-color);
 }
 

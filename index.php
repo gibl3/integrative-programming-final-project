@@ -17,7 +17,7 @@ include_once "includes/header.php";
       <a href="signup.php" class="button --primary-btn">Get started for free</a>
     </div>
   </section>
-
+  
   <section class="features">
     <div class="features__card">
       <img src="https://via.placeholder.com/150" alt="" />

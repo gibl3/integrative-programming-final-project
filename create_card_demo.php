@@ -1,3 +1,13 @@
+<?php
+session_start();
+if ($_SESSION["demo_study_set_created"] !== "ready") {
+  header("location: demo.php");
+} else {
+  unset($_SESSION["demo_study_set_created"]);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,13 +50,13 @@
       </div>
 
       <button class="button --tertiary-btn" id="close-btn" onclick="review_modal.close()">Go back</button>
-      <button class="button --primary-btn" id="close-btn">Finish</button>
+      <button class="button --primary-btn" id="continue-btn">Continue</button>
     </dialog>
   </main>
 </body>
 
-<script src="add_card.js"></script>
-<script src="finish_card.js"></script>
-<script src="js/modal.js"></script>
+<script type="module" src="js/add_card.js"></script>
+<script src="js/finish_card.js"></script>
+<!-- <script src="js/modal.js"></script> -->
 
 </html>

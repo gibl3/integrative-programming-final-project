@@ -98,8 +98,14 @@ function user_login($conn, $form_data)
     mysqli_stmt_close($stmt);
 
     if (password_verify($form_data['password'], $user['password_hash'])) {
-        send_response("success", "Login successful");
+        header('Content-Type: application/json');
+        echo json_encode(array(
+            'status' => "success",
+            'message' => "Login successful"
+        ));
+        return $user;
     }
+
     send_response("error", "Invalid email or password");
 }
 
@@ -118,4 +124,44 @@ function create_demo_study_set($conn, $name, $desc)
     mysqli_stmt_close($stmt);
 
     send_response("success", "Study set created successfully");
+}
+
+function create_demo_cards($conn, $question, $answer)
+{
+    $sql = "INSERT INTO demo_cards (`question`, `answer`) VALUES (?, ?);";
+    $stmt = mysqli_stmt_init($conn);
+
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        send_response("error", "Something went wrong");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $question, $answer);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    send_response("success", "Demo cards created successfully");
+}
+
+function get_demo_study_set($conn)
+{
+    $sql = "SELECT id, `name`, `desc` FROM demo_study_set";
+    $result = $conn->query($sql);
+
+    // Check if the query was successful
+    if ($result === false) {
+        die(json_encode(["error" => "Query failed: " . $conn->error]));
+    }
+
+    // Initialize an array to store the results
+    $studySets = array();
+
+    if ($result->num_rows > 0) {
+        // Fetch all data and store it in an array
+        while ($row = $result->fetch_assoc()) {
+            $studySets[] = $row;
+        }
+    }
+
+    return $studySets;
 }

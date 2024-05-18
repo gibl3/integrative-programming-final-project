@@ -13,6 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         send_response($status, $message);
     }
 
+    session_start();
+    $_SESSION["demo_study_set_created"] = "ready";
+
     create_demo_study_set($conn, $name, $desc);
 } else {
     header("location: ../demo.php?yeahphp");

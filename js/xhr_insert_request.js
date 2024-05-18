@@ -43,6 +43,10 @@ function displayResponse(responseType, element, message) {
 function redirectTo(path, time) {
   setTimeout(() => {
     window.location.href = path;
-    document.querySelector("#modal").close();
+    const modal = document.querySelector("#modal");
+
+    if (modal) {
+      modal.close();
+    }
   }, time);
 }

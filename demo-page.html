@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Overflow Hidden Example</title>
+    <style>
+      .text-container {
+        max-height: 100px; /* Set the maximum height */
+        overflow: hidden; /* Hide the overflowed text */
+        padding: 10px; /* Padding around the text container */
+        border: 1px solid black; 
+        box-sizing: border-box; 
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* Number of lines to show before clipping */
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text-container">
+      This is a long text that might overflow its container. This is a long text
+      that might overflow its container. This is a long text that might overflow
+      its container. This is a long text that might overflow its container. This
+      is a long text that might overflow its container. This is a long text that
+      might overflow its container. This is a long text that might overflow its
+      container.
+    </div>
+  </body>
+</html>

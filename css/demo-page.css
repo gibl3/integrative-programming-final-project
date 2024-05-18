@@ -1,0 +1,48 @@
+/* Ensure html and body have 100% height for demonstration purposes */
+/* html, body {
+    height: 100%;
+    margin: 0;
+  } */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Parent container styles */
+.parent-container {
+  height: 100vh;
+  background-color: rgb(150, 55, 55); /* For visualization */
+  display: flex; /* Optional, to center wrapper */
+  justify-content: center; /* Optional, to center wrapper */
+  align-items: center; /* Optional, to center wrapper */
+}
+
+/* Grid wrapper styles */
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1em; /* Gap between items */
+  padding: 2em; /* Padding around the grid */
+  width: 100%;
+  box-sizing: border-box;
+  background-color: white; /* For visualization */
+}
+
+/* Item styles */
+.item {
+  background-color: rgb(69, 150, 212); /* For visualization */
+  padding: 1em;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+}
+
+.text-container {
+  max-height: 100px; /* Set the maximum height */
+  overflow: hidden; /* Hide the overflowed text */
+  text-overflow: ellipsis; /* Optional: show ellipsis if text overflows */
+  border: 1px solid black; /* Optional: for visualization */
+  padding: 10px; /* Optional: for spacing */
+  position: relative;   
+}

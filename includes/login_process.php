@@ -31,10 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         send_response($status, $message);
     }
 
-    user_login($conn, $form_data);
+    $user = user_login($conn, $form_data);
+
+    session_start();
+    $_SESSION["user"] = $user;
 } else {
-    // header("location: ../login.php");
-    // echo "yeah";
-    // send_response("error", "Something went wrong");
     header("location: 404.php");
 }
